@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body id="body" class="container mx-auto ">
-    <header id="header">
+<body id="body" >
+    <header id="header"  class="container mx-auto">
         <!-- Navbar Section -->
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -51,7 +51,7 @@
             </div>
          </section> 
     </header>
-    <main>
+    <main  class="container mx-auto">
 <!-- Coupon section -->
   
   <section id="coupon-section" class="mt-8 showing-off">
@@ -74,13 +74,13 @@
       <div class="border rounded-3xl p-12 bg-[#F78C9C] flex-1">
         <div class="flex justify-center items-center">
           <div>
-            <h4 class="text-4xl font-extrabold">15% OFF</h4>
+            <h4 class="text-4xl font-extrabold">20% OFF</h4>
           <p class="text-xl font-semibold">on your next purchase</p>
           <p class="text-lg font-medium">use by january 2024</p>
           </div>
           <img src="images/cupon-devider.png" alt="">
           <div>
-            <h4 class="text-3xl font-bold">NEW15</h4>
+            <h4 class="text-3xl font-bold">Couple 20</h4>
             <p class="text-xl font-medium">Coupon Code</p>
           </div>
         </div>
@@ -100,7 +100,7 @@
   <section id="bus-card" class="mt-10 showing-off">
     <div class="flex justify-evenly border rounded-3xl bg-[#FFFFFF] ">
       <div class="">
-        <div class="flex justify-end gap-x-40 p-5 border">
+        <div class="flex justify-end gap-x-40 p-5 ">
           <div class="flex gap-4">
             <img src="images/bus-logo.png" alt="">
             <div>
@@ -132,7 +132,7 @@
         </div>
        </div>
       </div>
-      <div class="flex border">
+      <div class="flex ">
         <img src="images/info-devider.png" alt="">
       <div class="flex flex-col justify-center items-center text-center pr-5">
         <img src="images/fare.png" alt="">
@@ -315,7 +315,7 @@
             <div class="mt-4">
               <div class="join w-full">
                 <input class="input input-bordered join-item bg-[#ffffff] w-full" placeholder="Have any coupon?"/>
-                <button class="btn join-item rounded-lg bg-[#1DD100] text-white ">Apply</button>
+                <button onclick=" grandTotalCost('Apply')" class="btn join-item rounded-lg bg-[#1DD100] text-white ">Apply</button>
               </div>
             </div>
             <div class="text-[#030712] flex justify-between mt-4">
@@ -350,7 +350,7 @@
     <!-- Success Section -->
     <section id="success-page" class="flex justify-center items-center min-h-screen hidden">
         <div class="text-center space-y-4 border px-11 py-11 bg-[#FFFFFF33] rounded-2xl">
-          <img class="" src="images/success.png" alt="">
+          <img class="mx-auto" src="images/success.png" alt="">
           <h3 class="text-[#27AE60] text-2xl font-bold">SUCCESS</h3>
           <P class="text-xl text-[#4A4A4A] font-medium text-center">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you. 
             </P>

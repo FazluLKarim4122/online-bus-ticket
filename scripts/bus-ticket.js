@@ -22,14 +22,16 @@ let seatLeft = 40 ;
 for(const clicked of desireClicked){
     clicked.addEventListener('click', function(event){
         // console.log('right seat clicked', event)
-        
         seatSelected = seatSelected + 1 ;
-        document.getElementById('total-seat').innerText = seatSelected
+        // document.getElementById('total-seat').innerText = seatSelected ;
+        setInnerText('total-seat', seatSelected) ;
         seatLeft = seatLeft - 1 ;
-        document.getElementById('seat-left').innerText = seatLeft ;
+        // document.getElementById('seat-left').innerText = seatLeft ;
+        setInnerText('seat-left', seatLeft ) ;
+        //-------------------------------------
+
         const seatName = event.target.innerText ;
         // console.log(seatName)
-
         const seatBooking = document.getElementById('seat-info');
         const div = document.createElement("div");
         div.classList.add('flex','justify-between')
@@ -48,14 +50,35 @@ for(const clicked of desireClicked){
         const convertedTotalCost = parseInt(totalCost);
         // console.log(typeof convertedTotalCost);
         //total-cost er innertext change korbo
-        document.getElementById('total-cost').innerText = convertedTotalCost + parseInt(p3.innerText) ;
-        
+        const sum = convertedTotalCost + parseInt(p3.innerText) ;
+        // document.getElementById('total-cost').innerText = sum ;
+        setInnerText('total-cost', sum)
         // -----------------
-        const grandCost = document.getElementById('grand-total').innerText ;
-        const convertedGrandCost = parseInt(grandCost);
-        document.getElementById('grand-total').innerText = convertedGrandCost + parseInt(p3.innerText) ;
-
+        // const grandCost = document.getElementById('grand-total').innerText ;
+        // const convertedGrandCost = parseInt(grandCost);
+        // const sum2 = convertedTotalCost + parseInt(p3.innerText) ;
+        // // document.getElementById('grand-total').innerText = convertedGrandCost + parseInt(p3.innerText) ;
+        // setInnerText('grand-total', sum2)
+        grandTotalCost('grand-total', parseInt(p3.innerText));
     })
+}
+//ei equation ta bujhi nai
+function grandTotalCost(category){
+    
+    const totalCost = document.getElementById('total-cost').innerText ; //'total-cost'
+    const convertedGrandCost = parseInt(totalCost);  //totalCost
+    // const sum2 = convertedGrandCost + parseInt(value) ;
+    // setInnerText('grand-total', sum2)
+    setInnerText('grand-total', convertedGrandCost)
+    console.log(category)
+    if(category === 'Apply'){
+        setInnerText('grand-total', ((convertedGrandCost * 20)/100))
+    }
+
+}
+
+function setInnerText(id, value){
+    document.getElementById(id).innerText = value  
 }
 
 function nextPageSection(){
