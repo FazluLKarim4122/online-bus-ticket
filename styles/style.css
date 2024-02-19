@@ -69,6 +69,12 @@
   font-style: normal;
 }
 
+div{
+  display: flex;
+  justify-content:space-between ;
+  text-align: center;
+}
+
 
 
 

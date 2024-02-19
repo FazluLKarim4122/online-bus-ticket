@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="container mx-auto ">
-    <header class="">
+<body id="body" class="container mx-auto ">
+    <header id="header">
         <!-- Navbar Section -->
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -47,14 +47,14 @@
             <div class="flex flex-col justify-center items-center text-center pt-10 gap-5">
                 <h1 class="text-6xl text-white font-extrabold-extrabold">End-to-End Travel with <br> <span class="text-[#1DD100]">Detroit Paribahan</span></h1>
                 <p class="text-lg text-white font-normal">The finest travel service you have ever experienced, for the luxury you <br>can find the inner peace in traveling with aristocracy.</p>
-                <button class="rounded-xl bg-[#1DD100] p-4 text-xl font-bold">Buy Tickets</button>
+                <button onclick="showSection('bus-card')"  class="rounded-xl bg-[#1DD100] p-4 text-xl font-bold">Buy Tickets</button>
             </div>
          </section> 
     </header>
     <main>
 <!-- Coupon section -->
   
-  <section class="mt-8 ">
+  <section id="coupon-section" class="mt-8 showing-off">
     <h3 class="text-4xl font-bold text-center mb-4">Best offers for you</h3>
     <div class="flex gap-6">
       <div class="border rounded-3xl p-12 bg-[#FFBF0F] flex-1">
@@ -88,16 +88,16 @@
     </div>
   </section>
   <!-- Coupon Button -->
-  <section class="mt-10 text-center ">
+  <section id="coupon-btn" class="mt-10 text-center showing-off">
     <button class="text-[#1DD100] border border-[#1DD100] p-4 rounded-xl">See All Offers</button>
   </section>
   <!-- Bus Section -->
-  <section class="mt-28 text-center space-y-8 ">
+  <section id="bus-title" class="mt-28 text-center space-y-8 showing-off">
     <h2 class="text-4xl font-bold">Detroit Paribahan</h2>
     <p class="text-lg text-[#03071299] font-normal">The finest travel service you have ever experienced, for the luxury you <br>can find the inner peace in traveling with aristocracy.</p>
   </section>
   <!-- bus card section -->
-  <section class="mt-10 ">
+  <section id="bus-card" class="mt-10 showing-off">
     <div class="flex justify-evenly border rounded-3xl bg-[#FFFFFF] ">
       <div class="">
         <div class="flex justify-end gap-x-40 p-5 border">
@@ -110,7 +110,7 @@
           </div>
           <div>
             <button class="btn"><img src="images/seat-green.png" alt="">
-              <p class="text-[#1DD100]"><span>40</span> Seats left</p></button>
+              <p class="text-[#1DD100]"><span id="seat-left">40</span> Seats left</p></button>
           </div>
         </div>
         <!-- ------------------- -->
@@ -144,7 +144,7 @@
   </section>
 
   <!-- Select Your Seat Section -->
-    <section class="mt-14 border ">
+    <section id="seat-section" class="mt-14 border showing-off">
       <div class="flex justify-between ">
         <div class="flex-1 p-4">
           <div>
@@ -163,124 +163,124 @@
             <button class="btn"><img src="images/steering-wheel.svg" alt=""></button>
           </div>
           <!-- Seat A-->
-          <div class="space-y-4 mt-4 text-[#03071280]">
+          <div  class="space-y-4 mt-4 text-[#03071280]">
             <div class="flex justify-between items-center">
               <span class="">A</span>
               <div class="space-x-6">
-              <kbd id="A1" class="kbd px-8 py-4">A1</kbd>
-              <kbd id="A2" class="kbd px-8 py-4">A2</kbd>
+              <kbd id="A1" onclick="setBackgroundColorById('A1')" class="kbd px-8 py-4">A1</kbd>
+              <kbd id="A2" onclick="setBackgroundColorById('A2')" class="kbd px-8 py-4">A2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="A3" class="kbd px-8 py-4">A3</kbd>
-              <kbd id="A4" class="kbd px-8 py-4">A4</kbd>
+              <kbd id="A3" onclick="setBackgroundColorById('A3')" class="kbd px-8 py-4">A3</kbd>
+              <kbd id="A4" onclick="setBackgroundColorById('A4')" class="kbd px-8 py-4">A4</kbd>
               </div>
             </div>
             <!-- Seat B-->
             <div class="flex justify-between items-center">
               <span class="">B</span>
               <div class="space-x-6">
-              <kbd id="B1" class="kbd px-8 py-4">B1</kbd>
-              <kbd id="B2" class="kbd px-8 py-4">B2</kbd>
+              <kbd id="B1" onclick="setBackgroundColorById('B1')" class="kbd px-8 py-4">B1</kbd>
+              <kbd id="B2" onclick="setBackgroundColorById('B2')" class="kbd px-8 py-4">B2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="B3" class="kbd px-8 py-4">B3</kbd>
-              <kbd id="B4" class="kbd px-8 py-4">B4</kbd>
+              <kbd id="B3" onclick="setBackgroundColorById('B3')" class="kbd px-8 py-4">B3</kbd>
+              <kbd id="B4" onclick="setBackgroundColorById('B4')" class="kbd px-8 py-4">B4</kbd>
               </div>
             </div>
             <!-- Seat C-->
             <div class="flex justify-between items-center">
               <span class="">C</span>
               <div class="space-x-6">
-              <kbd id="C1" class="kbd px-8 py-4">C1</kbd>
-              <kbd id="C2" class="kbd px-8 py-4">C2</kbd>
+              <kbd id="C1" onclick="setBackgroundColorById('C1')" class="kbd px-8 py-4">C1</kbd>
+              <kbd id="C2" onclick="setBackgroundColorById('C2')" class="kbd px-8 py-4">C2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="C3" class="kbd px-8 py-4">C3</kbd>
-              <kbd id="C4" class="kbd px-8 py-4">C4</kbd>
+              <kbd id="C3" onclick="setBackgroundColorById('C3')" class="kbd px-8 py-4">C3</kbd>
+              <kbd id="C4" onclick="setBackgroundColorById('C4')" class="kbd px-8 py-4">C4</kbd>
               </div>
             </div>
             <!-- Seat D-->
             <div class="flex justify-between items-center">
               <span class="">D</span>
               <div class="space-x-6">
-              <kbd id="D1" class="kbd px-8 py-4">D1</kbd>
-              <kbd id="D2" class="kbd px-8 py-4">D2</kbd>
+              <kbd id="D1" onclick="setBackgroundColorById('D1')" class="kbd px-8 py-4">D1</kbd>
+              <kbd id="D2" onclick="setBackgroundColorById('D2')" class="kbd px-8 py-4">D2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="D3" class="kbd px-8 py-4">D3</kbd>
-              <kbd id="D4" class="kbd px-8 py-4">D4</kbd>
+              <kbd id="D3" onclick="setBackgroundColorById('D3')" class="kbd px-8 py-4">D3</kbd>
+              <kbd id="D4" onclick="setBackgroundColorById('D4')" class="kbd px-8 py-4">D4</kbd>
               </div>
             </div>
             <!-- Seat E-->
             <div class="flex justify-between items-center">
               <span class="">E</span>
               <div class="space-x-6">
-              <kbd id="E1" class="kbd px-8 py-4">E1</kbd>
-              <kbd id="E2" class="kbd px-8 py-4">E2</kbd>
+              <kbd id="E1" onclick="setBackgroundColorById('E1')" class="kbd px-8 py-4">E1</kbd>
+              <kbd id="E2" onclick="setBackgroundColorById('E2')" class="kbd px-8 py-4">E2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="E3" class="kbd px-8 py-4">E3</kbd>
-              <kbd id="E4" class="kbd px-8 py-4">E4</kbd>
+              <kbd id="E3" onclick="setBackgroundColorById('E3')" class="kbd px-8 py-4">E3</kbd>
+              <kbd id="E4" onclick="setBackgroundColorById('E4')" class="kbd px-8 py-4">E4</kbd>
               </div>
             </div>
             <!-- Seat F-->
             <div class="flex justify-between items-center">
               <span class="">F</span>
               <div class="space-x-6">
-              <kbd id="F1" class="kbd px-8 py-4">F1</kbd>
-              <kbd id="F2" class="kbd px-8 py-4">F2</kbd>
+              <kbd id="F1" onclick="setBackgroundColorById('F1')" class="kbd px-8 py-4">F1</kbd>
+              <kbd id="F2" onclick="setBackgroundColorById('F2')" class="kbd px-8 py-4">F2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="F3" class="kbd px-8 py-4">F3</kbd>
-              <kbd id="F4" class="kbd px-8 py-4">F4</kbd>
+              <kbd id="F3" onclick="setBackgroundColorById('F3')" class="kbd px-8 py-4">F3</kbd>
+              <kbd id="F4" onclick="setBackgroundColorById('F4')" class="kbd px-8 py-4">F4</kbd>
               </div>
             </div>
             <!-- Seat G -->
             <div class="flex justify-between items-center">
               <span class="">G</span>
               <div class="space-x-6">
-              <kbd id="G1" class="kbd px-8 py-4">G1</kbd>
-              <kbd id="G2" class="kbd px-8 py-4">G2</kbd>
+              <kbd id="G1" onclick="setBackgroundColorById('G1')" class="kbd px-8 py-4">G1</kbd>
+              <kbd id="G2" onclick="setBackgroundColorById('G2')" class="kbd px-8 py-4">G2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="G3" class="kbd px-8 py-4">G3</kbd>
-              <kbd id="G4" class="kbd px-8 py-4">G4</kbd>
+              <kbd id="G3" onclick="setBackgroundColorById('G3')" class="kbd px-8 py-4">G3</kbd>
+              <kbd id="G4" onclick="setBackgroundColorById('G4')" class="kbd px-8 py-4">G4</kbd>
               </div>
             </div>
             <!-- Seat H-->
             <div class="flex justify-between items-center">
               <span class="">H</span>
               <div class="space-x-6">
-              <kbd id="H1" class="kbd px-8 py-4">H1</kbd>
-              <kbd id="H2" class="kbd px-8 py-4">H2</kbd>
+              <kbd id="H1" onclick="setBackgroundColorById('H1')" class="kbd px-8 py-4">H1</kbd>
+              <kbd id="H2" onclick="setBackgroundColorById('H2')" class="kbd px-8 py-4">H2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="H3" class="kbd px-8 py-4">H3</kbd>
-              <kbd id="H4" class="kbd px-8 py-4">H4</kbd>
+              <kbd id="H3" onclick="setBackgroundColorById('H3')" class="kbd px-8 py-4">H3</kbd>
+              <kbd id="H4" onclick="setBackgroundColorById('H4')" class="kbd px-8 py-4">H4</kbd>
               </div>
             </div>
             <!-- Seat I-->
             <div class="flex justify-between items-center">
               <span class="">I</span>
               <div class="space-x-6">
-              <kbd id="I1" class="kbd px-8 py-4">I1</kbd>
-              <kbd id="I2" class="kbd px-8 py-4">I2</kbd>
+              <kbd id="I1" onclick="setBackgroundColorById('I1')" class="kbd px-8 py-4">I1</kbd>
+              <kbd id="I2" onclick="setBackgroundColorById('I2')" class="kbd px-8 py-4">I2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="I3" class="kbd px-8 py-4">I3</kbd>
-              <kbd id="I4" class="kbd px-8 py-4">I4</kbd>
+              <kbd id="I3" onclick="setBackgroundColorById('I3')" class="kbd px-8 py-4">I3</kbd>
+              <kbd id="I4" onclick="setBackgroundColorById('I4')" class="kbd px-8 py-4">I4</kbd>
               </div>
             </div>
             <!-- Seat J-->
             <div class="flex justify-between items-center">
               <span class="">J</span>
               <div class="space-x-6">
-              <kbd id="J1" class="kbd px-8 py-4">J1</kbd>
-              <kbd id="J2" class="kbd px-8 py-4">J2</kbd>
+              <kbd id="J1" onclick="setBackgroundColorById('J1')" class="kbd px-8 py-4">J1</kbd>
+              <kbd id="J2" onclick="setBackgroundColorById('J2')" class="kbd px-8 py-4">J2</kbd>
               </div>
               <div class="space-x-6">
-              <kbd id="J3" class="kbd px-8 py-4">J3</kbd>
-              <kbd id="J4" class="kbd px-8 py-4">J4</kbd>
+              <kbd id="J3" onclick="setBackgroundColorById('J3')" class="kbd px-8 py-4">J3</kbd>
+              <kbd id="J4" onclick="setBackgroundColorById('J4')" class="kbd px-8 py-4">J4</kbd>
               </div>
             </div>
           </div>
@@ -298,20 +298,19 @@
           <!-- Ticket Calculation -->
           <div class="mt-4 border bg-[#f7f8f8] p-4 rounded-xl">
             <div class="flex justify-between text-[#030712]">
-              <p>Seat <span class="text-[#1DD100]">0</span></p>
+              <p>Seat <span id="total-seat" class="text-[#1DD100]">0</span></p>
               <p>Class</p>
               <P>Price</P>
             </div>
             <hr class="border-dashed mt-1">
-            <div class="flex justify-between mt-2 text-[#03071280]">
-              <p>C2</p>
-              <p>Economy</p>
-              <p>550</p>
+            <div id="seat-info" class=" mt-2 text-[#03071280]">
+              
+              
             </div>
             <hr class="mt-1 ">
             <div class="text-[#030712] flex justify-between ">
               <p>Total Price</p>
-              <p>BDT <span>0</span></p>
+              <p>BDT <span id="total-cost">0</span></p>
             </div>
             <div class="mt-4">
               <div class="join w-full">
@@ -321,7 +320,7 @@
             </div>
             <div class="text-[#030712] flex justify-between mt-4">
               <p>Grand Total</p>
-              <p>BDT <span>0</span></p>
+              <p>BDT <span id="grand-total">0</span></p>
             </div>
           </div>
           <!-- Passenger Info  -->
@@ -338,7 +337,7 @@
             <input type="email" name="" id="" class="text-[#03071266] font-semibold border rounded-xl p-3 w-full" placeholder="Enter your email id">
           </div>
           <!-- Next Button -->
-          <button class="btn bg-[#1DD100] w-full mt-4">Next</button>
+          <button onclick="nextPageSection()" class="btn bg-[#1DD100] w-full mt-4">Next</button>
           <div class="flex justify-around mt-8 ">
             <a class="link text-base text-[#03071266]">Terms and Conditions</a>
             <a class="link text-base text-[#03071266]">Cancellation Policy</a>
@@ -349,19 +348,19 @@
     </section>
     
     <!-- Success Section -->
-    <section class="flex justify-center items-center min-h-screen hidden">
+    <section id="success-page" class="flex justify-center items-center min-h-screen hidden">
         <div class="text-center space-y-4 border px-11 py-11 bg-[#FFFFFF33] rounded-2xl">
           <img class="" src="images/success.png" alt="">
           <h3 class="text-[#27AE60] text-2xl font-bold">SUCCESS</h3>
           <P class="text-xl text-[#4A4A4A] font-medium text-center">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you. 
             </P>
           <P class="text-xl text-[#4A4A4A] font-light">Shortly you will find a confirmation in your email.</P>
-          <button class="btn bg-[#20AE5C] text-white w-1/2">Continue</button>
+          <button onclick="continueSection()" class="btn bg-[#20AE5C] text-white w-1/2">Continue</button>
         </div>
     </section>
     
     </main>
-    <footer class="bg-[#030712] mt-8 ">
+    <footer id="showing-off" class="bg-[#030712] mt-8 ">
       <section>
         <div class="flex justify-between px-20 pt-20">
           <div class="space-y-4">
@@ -386,12 +385,10 @@
               <p class="text-sm text-[#FFFFFF]">Privacy policy</p>
             </div>
           </div>
-          
         </div>
-        
       </section>
-      
     </footer>
-    
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/bus-ticket.js"></script>
 </body>
 </html>
