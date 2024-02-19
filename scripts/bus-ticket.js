@@ -19,9 +19,28 @@ const desireClicked = document.getElementsByClassName("kbd");
 // console.log(desireClicked);
 let seatSelected = 0 ;
 let seatLeft = 40 ;
+let clickedSeat = [];
+let limit = 4;
 for(const clicked of desireClicked){
     clicked.addEventListener('click', function(event){
-        // console.log('right seat clicked', event)
+        if (clickedSeat.includes(clicked)) {
+            alert("This seat has already been clicked");
+            return; 
+        }
+        clickedSeat.push(clicked);
+        // console.log(clickedSeat.length)
+        if(clickedSeat.length > limit){
+            alert("You have clicked more than 4 seats")
+            
+            // clicked.style.visibility = "not working";
+            
+            return ;
+        }
+        // if(clickedSeat.length > limit){
+        //     clicked.addEventListener('click', false);
+        //     return ;
+        // }
+
         seatSelected = seatSelected + 1 ;
         // document.getElementById('total-seat').innerText = seatSelected ;
         setInnerText('total-seat', seatSelected) ;
@@ -60,6 +79,12 @@ for(const clicked of desireClicked){
         // // document.getElementById('grand-total').innerText = convertedGrandCost + parseInt(p3.innerText) ;
         // setInnerText('grand-total', sum2)
         grandTotalCost('grand-total', parseInt(p3.innerText));
+
+
+
+
+    
+
     })
 }
 //ei equation ta bujhi nai
@@ -70,6 +95,7 @@ function grandTotalCost(category){
     // const sum2 = convertedGrandCost + parseInt(value) ;
     // setInnerText('grand-total', sum2)
     setInnerText('grand-total', convertedGrandCost)
+
     console.log(category)
     if(category === 'Apply'){
         setInnerText('grand-total', ((convertedGrandCost * 20)/100))
